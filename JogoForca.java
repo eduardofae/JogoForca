@@ -29,10 +29,11 @@ public class JogoForca {
         for (int i = 0; i < tamPalavraSorteada; i++) {
             letrasReveladas[i] = '?';
         }
+        boolean achou = false;
 
 
 		// Loop do jogo
-        while (chancesRestantes > 0) {
+        while (chancesRestantes > 0 && !achou) {
             System.out.println("\nChances restantes: " + chancesRestantes);
             
             // Mostra letras ja reveladas
@@ -48,10 +49,14 @@ public class JogoForca {
 
             // Revela letras, se existirem.
             boolean letraEncontrada = false;
+            achou = true;
             for (int i = 0; i < tamPalavraSorteada; i++) {
                 if (letrasEscondidas[i] == letraDigitada) {
                     letraEncontrada = true;
                     letrasReveladas[i] = letrasEscondidas[i];
+                }
+                if (letrasReveladas[i] == '?') {
+                    achou = false;
                 }
             }
             
@@ -61,6 +66,19 @@ public class JogoForca {
             }
         }
 
+        if(achou) {
+            System.out.println("========================");
+            System.out.println(" Parabéns, você Ganhou! ");
+            System.out.println("========================");
+        }
+        else {
+            System.out.println(palavraSorteada); // Revela a palavra
+            System.out.println(); // quebra a linha
+
+            System.out.println("========================");
+            System.out.println(" Que pena, você Perdeu! ");
+            System.out.println("========================");
+        }
         System.out.println("===========");
         System.out.println(" Game Over ");
         System.out.println("===========");
