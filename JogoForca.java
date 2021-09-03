@@ -44,7 +44,7 @@ public class JogoForca {
 
             // Solicita letra do usuario
             System.out.print("Letra: ");
-            String strLetraDigitada = in.nextLine();
+            String strLetraDigitada = in.nextLine().toUpperCase();
             char letraDigitada = strLetraDigitada.charAt(0);
 
             // Revela letras, se existirem.
