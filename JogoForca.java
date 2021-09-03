@@ -66,18 +66,20 @@ public class JogoForca {
             }
         }
 
+        System.out.println(); // quebra a linha
+
         if(achou) {
             System.out.println("========================");
             System.out.println(" Parabéns, você Ganhou! ");
             System.out.println("========================");
         }
         else {
-            System.out.println(palavraSorteada); // Revela a palavra
-            System.out.println(); // quebra a linha
-
             System.out.println("========================");
             System.out.println(" Que pena, você Perdeu! ");
             System.out.println("========================");
+
+            System.out.println("A Palavra era : " + palavraSorteada); // Revela a palavra
+            System.out.println(); // quebra a linha
         }
         System.out.println("===========");
         System.out.println(" Game Over ");
