@@ -20,7 +20,7 @@ public class JogoForca {
 
         Random rnd = new Random();
 
-        int indicePalavraSorteada = rnd.nextInt(bancoPalavras.length - 1);
+        int indicePalavraSorteada = rnd.nextInt(bancoPalavras.length);
         int chancesRestantes = 10;
         String palavraSorteada = bancoPalavras[indicePalavraSorteada];
         int tamPalavraSorteada = palavraSorteada.length();
@@ -56,7 +56,7 @@ public class JogoForca {
             }
             
 			// Reduz nro de chances se letra digitada nao existir.
-            if (letraEncontrada) {
+            if (!letraEncontrada) {
                 chancesRestantes--;
             }
         }
